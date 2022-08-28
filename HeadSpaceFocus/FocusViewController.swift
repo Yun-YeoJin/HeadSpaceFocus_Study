@@ -44,6 +44,11 @@ class FocusViewController: UIViewController {
         // Layout
         collectionView.collectionViewLayout = layout()
         
+        collectionView.delegate = self
+        
+        self.navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.tintColor = .white
+        
         updateButtonTitle()
     }
     
@@ -80,4 +85,18 @@ class FocusViewController: UIViewController {
         
         updateButtonTitle()
     }
+}
+
+extension FocusViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = items[indexPath.item]
+        
+        let sb = UIStoryboard(name: "QuickFocus", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "QuickFocusListViewController") as! QuickFocusListViewController
+        vc.title = item.title // 값 넘기기
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
 }

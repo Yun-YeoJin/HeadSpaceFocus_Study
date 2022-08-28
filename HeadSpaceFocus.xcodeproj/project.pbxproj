@@ -23,6 +23,7 @@
 		AE4AE1CF28BBA40300EE6D43 /* QuickFocusListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4AE1CE28BBA40300EE6D43 /* QuickFocusListViewController.swift */; };
 		AE4AE1D128BBA5B700EE6D43 /* QuickFocusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4AE1D028BBA5B700EE6D43 /* QuickFocusCell.swift */; };
 		AE4AE1D428BBA7AC00EE6D43 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4AE1D328BBA7AC00EE6D43 /* ReusableCell.swift */; };
+		AE4AE1D628BBB12000EE6D43 /* QuickFocusHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4AE1D528BBB12000EE6D43 /* QuickFocusHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		AE4AE1CE28BBA40300EE6D43 /* QuickFocusListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFocusListViewController.swift; sourceTree = "<group>"; };
 		AE4AE1D028BBA5B700EE6D43 /* QuickFocusCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFocusCell.swift; sourceTree = "<group>"; };
 		AE4AE1D328BBA7AC00EE6D43 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		AE4AE1D528BBB12000EE6D43 /* QuickFocusHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFocusHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				94182267281E583C00FB38F1 /* FocusCell.swift */,
 				94DA3CA7281ECE3D0054FFC7 /* QuickFocus.swift */,
 				AE4AE1CE28BBA40300EE6D43 /* QuickFocusListViewController.swift */,
+				AE4AE1D528BBB12000EE6D43 /* QuickFocusHeaderView.swift */,
 				AE4AE1D028BBA5B700EE6D43 /* QuickFocusCell.swift */,
 				AE4AE1CC28BBA3EE00EE6D43 /* QuickFocus.storyboard */,
 				943BB54828150EFA005A1B6E /* Main.storyboard */,
@@ -290,6 +293,7 @@
 			files = (
 				94DA3CA8281ECE3D0054FFC7 /* QuickFocus.swift in Sources */,
 				AE4AE1CF28BBA40300EE6D43 /* QuickFocusListViewController.swift in Sources */,
+				AE4AE1D628BBB12000EE6D43 /* QuickFocusHeaderView.swift in Sources */,
 				943BB57728151183005A1B6E /* Focus.swift in Sources */,
 				943BB54328150EFA005A1B6E /* AppDelegate.swift in Sources */,
 				AE4AE1D128BBA5B700EE6D43 /* QuickFocusCell.swift in Sources */,

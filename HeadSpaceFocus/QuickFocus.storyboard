@@ -21,33 +21,33 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aDI-Yd-ZK9">
-                                    <size key="itemSize" width="184" height="262"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="itemSize" width="182" height="372"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuickFocusCell" id="Khz-YQ-mHR" customClass="QuickFocusCell" customModule="HeadSpaceFocus" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="184" height="262"/>
+                                        <rect key="frame" x="0.0" y="50" width="182" height="372"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uCQ-la-R28">
-                                            <rect key="frame" x="0.0" y="0.0" width="184" height="262"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="372"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="t5P-Ba-2nB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="184" height="122.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="121.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="t5P-Ba-2nB" secondAttribute="height" multiplier="3:2" id="jKD-Py-aNe"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjb-NM-a1H">
-                                                    <rect key="frame" x="8" y="167" width="168" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mjb-NM-a1H">
+                                                    <rect key="frame" x="8" y="166" width="166" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea0-Nb-8rn">
-                                                    <rect key="frame" x="8" y="138.5" width="168" height="20.5"/>
+                                                    <rect key="frame" x="8" y="137.5" width="166" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -66,7 +66,7 @@
                                                 <constraint firstItem="Ea0-Nb-8rn" firstAttribute="top" secondItem="t5P-Ba-2nB" secondAttribute="bottom" constant="16" id="sF6-TR-VTh"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="184" height="262"/>
+                                        <size key="customSize" width="182" height="372"/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="Mjb-NM-a1H" id="d4U-Rm-cUu"/>
                                             <outlet property="thumbnailImageView" destination="t5P-Ba-2nB" id="eTA-2Q-p2b"/>
@@ -74,6 +74,27 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="QuickFocusHeaderView" id="54S-NL-GS6" customClass="QuickFocusHeaderView" customModule="HeadSpaceFocus" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Un9-u1-5fF">
+                                            <rect key="frame" x="0.0" y="8" width="414" height="34"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Un9-u1-5fF" firstAttribute="top" secondItem="54S-NL-GS6" secondAttribute="top" constant="8" id="Gvh-BO-zby"/>
+                                        <constraint firstAttribute="trailing" secondItem="Un9-u1-5fF" secondAttribute="trailing" id="WB9-6P-lr9"/>
+                                        <constraint firstItem="Un9-u1-5fF" firstAttribute="leading" secondItem="54S-NL-GS6" secondAttribute="leading" id="iLx-Pz-mNK"/>
+                                        <constraint firstAttribute="bottom" secondItem="Un9-u1-5fF" secondAttribute="bottom" constant="8" id="kP6-32-62A"/>
+                                    </constraints>
+                                    <connections>
+                                        <outlet property="titleLabel" destination="Un9-u1-5fF" id="blB-LZ-IqI"/>
+                                    </connections>
+                                </collectionReusableView>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>

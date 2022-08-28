@@ -31,13 +31,26 @@ class QuickFocusListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        //셀 구성하기
         datesource = UICollectionViewDiffableDataSource<Section, Item>(collectionView: collectionView, cellProvider: { collectionView, indexPath, item in
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuickFocusCell", for: indexPath) as? QuickFocusCell else { return nil }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: QuickFocusCell.reuseIdentifier, for: indexPath) as? QuickFocusCell else { return nil }
             
             cell.configure(item)
             return cell
         })
+        
+        //HeaderView 연결해주기
+        datesource.supplementaryViewProvider = { (collectionView, kind, indexPath) in
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "QuickFocusHeaderView", for: indexPath) as? QuickFocusHeaderView else { return nil }
+            
+            let allSections = Section.allCases
+            let section = allSections[indexPath.section]
+            header.configure(section.title)
+            
+            return header
+        }
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
         snapshot.appendSections([.breathe, .walking])// 각 섹션을 넣어준다.
@@ -48,6 +61,8 @@ class QuickFocusListViewController: UIViewController {
         datesource.apply(snapshot)
         
         collectionView.collectionViewLayout = layout()
+        
+        self.navigationItem.largeTitleDisplayMode = .never
         
 //        collectionView.delegate = self
 //        collectionView.dataSource = self
@@ -80,8 +95,15 @@ private func layout() -> UICollectionViewCompositionalLayout {
     let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50))//Label 크기에 따른 사이즈 자동 조절
     
     let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2) //2줄로 표현하겠다.
+    group.interItemSpacing = .fixed(10)
     
     let section = NSCollectionLayoutSection(group: group)
+    section.contentInsets = NSDirectionalEdgeInsets(top: 30, leading: 20, bottom: 30, trailing: 20)
+    section.interGroupSpacing = 20
+    
+    let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
+    let header = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize, elementKind: UICollectionView.elementKindSectionHeader, alignment: .top)
+    section.boundarySupplementaryItems = [header]
     
     let layout = UICollectionViewCompositionalLayout(section: section)
     return layout
