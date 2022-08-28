@@ -16,7 +16,7 @@ class FocusViewController: UIViewController {
     var items: [Focus] = Focus.list
     
     typealias Item = Focus
-    
+     
     enum Section {
         case main
     }
@@ -69,8 +69,8 @@ class FocusViewController: UIViewController {
     }
     
     @IBAction func refreshButtonTapped(_ sender: Any) {
-        curated.toggle()
         
+        curated.toggle()
         self.items = curated ? Focus.recommendations : Focus.list
         
         var snapshot = NSDiffableDataSourceSnapshot<Section, Item>()
